@@ -1,4 +1,5 @@
 cd
+FQDN=znode.gpumine.club
 echo "<USER> is $USER" 
 echo "<FQDN> is $FQDN"
 sudo cp /home/$USER/.acme.sh/$FQDN/ca.cer /usr/share/ca-certificates/ca.crt
