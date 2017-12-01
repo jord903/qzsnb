@@ -9,4 +9,4 @@ git clone https://github.com/ZencashOfficial/secnodetracker.git
 cd secnodetracker
 npm install
 
-echo "node setup"
+echo "##node setup"
