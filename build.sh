@@ -1423,36 +1423,8 @@ pm2 start app.js --name secnode
 pm2 startup
 sudo env PATH=$PATH:/usr/local/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u jord903 --hp /home/jord903
 sudo apt install monit
-cat <<EOF > ~/zen_node.sh
-#!/bin/bash
-
-PID_FILE='/home/jord903/.zen/zen_node.pid'
-
-start() {
-       touch $PID_FILE
-       eval "/bin/su jord903 -c '/usr/bin/zend 2>&1 >> /dev/null'"
-       PID=$(ps aux | grep zend | grep -v grep | awk '{print $2}')
-       echo "Starting zend with PID $PID"
-       echo $PID > $PID_FILE
-}
-stop () {
-       pkill zend
-       rm $PID_FILE
-       echo "Stopping zend"
-}
-
-case $1 in
-    start)
-       start
-       ;;
-    stop)  
-       stop
-       ;;
-     *)  
-       echo "usage: zend {start|stop}" ;;
- esac
- exit 0
-EOF
+cd ~/qzsnb
+sudo cp zen_node.sh ~/
 chmod u+x ~/zen_node.sh
 echo '### added on setup for zend' | sudo tee -a /etc/monit/monitrc
 echo 'set httpd port 2812' | sudo tee -a /etc/monit/monitrc
