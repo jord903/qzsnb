@@ -1425,7 +1425,7 @@ sudo env PATH=$PATH:/usr/local/bin /usr/local/lib/node_modules/pm2/bin/pm2 start
 sudo apt install monit
 cd ~/qzsnb
 sudo cp zen_node.sh ~/
-chmod u+x ~/zen_node.sh
+sudo chmod u+x ~/zen_node.sh
 echo '### added on setup for zend' | sudo tee -a /etc/monit/monitrc
 echo 'set httpd port 2812' | sudo tee -a /etc/monit/monitrc
 echo 'use address localhost # only accept connection from localhost' | sudo tee -a /etc/monit/monitrc
