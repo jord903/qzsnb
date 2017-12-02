@@ -24,3 +24,4 @@ EOF
 
 chmod u+x ~/upgrade.sh
 sudo ~/upgrade.sh
+echo "#update system -> sudo ~/upgrade.sh"
