@@ -1,8 +1,8 @@
 cd ~/zencash/secnodetracker/
 sudo npm install pm2 -g
 pm2 start app.js --name secnode
-
 pm2 startup
+sudo env PATH=$PATH:/usr/local/bin /usr/local/lib/node_modules/pm2/bin/pm2 startup systemd -u jord903 --hp /home/jord903
 
 sudo apt install monit
 cd ~/qzsnb
