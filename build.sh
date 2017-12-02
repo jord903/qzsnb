@@ -1392,13 +1392,13 @@ cd
 sudo cp /home/jord903/.acme.sh/$FQDN/ca.cer /usr/share/ca-certificates/ca.crt
 sudo dpkg-reconfigure ca-certificates
 zen-cli stop
-sleep 15
+sleep 25
 cat <<EOF >> ~/.zen/zen.conf
 tlscertpath=/home/jord903/.acme.sh/$FQDN/$FQDN.cer 
 tlskeypath=/home/jord903/.acme.sh/$FQDN/$FQDN.key
 EOF
 zend
-sleep 25
+sleep 30
 zen-cli getnetworkinfo
 zen-cli z_getnewaddress
         ;;
