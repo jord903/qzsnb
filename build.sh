@@ -12,16 +12,8 @@ sudo fallocate -l 1G /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile
-sudo su -
-cat <<EOF >> /etc/fstab
-/swapfile none swap sw 0 0
-EOF
-exit
-sudo su -
-cat <<EOF >> /etc/sysctl.conf
-vm.swappiness=10
-EOF
-exit
+echo "/swapfile none swap sw 0 0" | sudo tee -a /etc/fstab
+echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 sudo apt-get update
 sudo apt-get -y install zen
 zen-fetch-params
