@@ -45,10 +45,10 @@ cd acme.sh
 sudo ~/.acme.sh/acme.sh --issue --standalone -d $FQDN 
 echo "crontab -e"
 echo "6 0 * * * "/home/jord903/.acme.sh"/acme.sh --cron --home "/home/jord903/.acme.sh" > /dev/null"
+sudo cp /home/jord903/.acme.sh/$FQDN/ca.cer /usr/share/ca-certificates/ca.crt
 		;;
   "sslinst")
 cd
-sudo cp /home/jord903/.acme.sh/$FQDN/ca.cer /usr/share/ca-certificates/ca.crt
 sudo dpkg-reconfigure ca-certificates
 zen-cli stop
 sleep 25
