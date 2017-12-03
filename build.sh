@@ -1388,6 +1388,8 @@ cd acme.sh
 sudo ~/.acme.sh/acme.sh --issue --standalone -d $FQDN 
 echo "crontab -e"
 echo "6 0 * * * "/home/jord903/.acme.sh"/acme.sh --cron --home "/home/jord903/.acme.sh" > /dev/null"
+		;;
+  "sslinst")
 cd
 sudo cp /home/jord903/.acme.sh/$FQDN/ca.cer /usr/share/ca-certificates/ca.crt
 sudo dpkg-reconfigure ca-certificates
@@ -1464,9 +1466,10 @@ sudo ~/upgrade.sh
 echo "#update system -> sudo ~/upgrade.sh"
         ;;
   *)
-echo "Usage {zen|ssl|secnode|setup|runboot|secure}"
+echo "Usage {zen|ssl|sslinst|secnode|setup|runboot|secure}"
 echo "zen #Build ZenCash Wallet"
 echo "ssl #Create SSL Cert"
+echo "sslinst #Install SSL Cert on Zend"
 echo "secnode #Install SecnodeTracker"
 echo "setup #Setup SecnodeTracker"
 echo "runboot #Zend and SecnodeTracker Running on Boot"
