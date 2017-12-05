@@ -30,6 +30,7 @@ daemon=1
 listen=1
 txindex=1
 logtimestamps=1
+onlynet=ipv4
 EOF
 zend
         ;;
