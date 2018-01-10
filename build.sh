@@ -120,6 +120,13 @@ chmod u+x ~/upgrade.sh
 sudo ~/upgrade.sh
 echo "#update system -> sudo ~/upgrade.sh"
         ;;
+  "upsecnode")
+cd ~/zencash/secnodetracker
+pm2 stop all
+git checkout master
+git pull
+pm2 start all
+		;;
   *)
 echo "Usage {zen|ssl|secnode|setup|runboot|secure}"
 echo "zen #Build ZenCash Wallet"
@@ -128,5 +135,6 @@ echo "secnode #Install SecnodeTracker"
 echo "setup #Setup SecnodeTracker"
 echo "runboot #Zend and SecnodeTracker Running on Boot"
 echo "secure #Enable Firewall and Fail2Ban ; Create Upgrade.sh"
+echo "upsecnode #Update SecnodeTracker"
         ;;
 esac
