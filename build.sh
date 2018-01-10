@@ -125,6 +125,7 @@ cd ~/zencash/secnodetracker
 pm2 stop all
 git fetch origin
 git checkout master
+git checkout -- package.json
 git pull
 node setup
 pm2 start all
