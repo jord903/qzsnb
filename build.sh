@@ -123,8 +123,10 @@ echo "#update system -> sudo ~/upgrade.sh"
   "upsecnode")
 cd ~/zencash/secnodetracker
 pm2 stop all
+git fetch origin
 git checkout master
 git pull
+node setup
 pm2 start all
 		;;
   *)
